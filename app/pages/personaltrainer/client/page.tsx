@@ -1,25 +1,24 @@
 import CreateClientForm from "@/components/CreateUser";
 import ClientList from "@/components/UserList";
-import { checkSession, getAllClients } from "@/services/TrainerService";
+import { getAllClients } from "@/services/TrainerService";
 
 export default async function ClientsPage() {
   const clients = await getAllClients();
-  const session = await checkSession();
+  // const session = await checkSession();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="w-full p-4">
-        <div className="bg-blue-200 p-6 shadow-2xl border-4 border-blue-100-300 rounded-t-2xl mb-12">
-          <h2 className="text-4xl text-center text-gray-800 pb-8">
-            Create new client that you can manage
-          </h2>
-          <CreateClientForm />
-        </div>
-        <h2 className="text-4xl text-center text-gray-800 pb-8">
-          {session?.name}
-          {"'s"} Clients
-        </h2>
-        <ClientList clients={clients?.data} />
-      </div>
-    </main>
-  );
+    <main className="flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="w-full max-w-md mx-auto bg-gray-100 p-8 shadow-lg rounded-lg mb-12">
+      <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
+        Opret en ny klient du kan administrere
+      </h2>
+      <CreateClientForm />
+    </div>
+    <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
+      Clients
+    </h2>
+    <div className="w-full max-w-md mx-auto bg-white p-4 shadow-md rounded-lg">
+      <ClientList clients={clients?.data} />
+    </div>
+  </main>
+);
 }

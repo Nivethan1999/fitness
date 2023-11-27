@@ -14,8 +14,8 @@ export default function CreateWorkoutProgram({
   clients: User[] | undefined;
 }) {
   let initialState = {
-    message: null,
-    success: null,
+    message: "" as string,
+    success: false as boolean,
   };
   const [state, formAction] = useFormState(createWorkoutProgram, initialState);
 
