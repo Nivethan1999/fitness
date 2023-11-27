@@ -4,8 +4,9 @@ import axios from "axios";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./Auth";
 import User from "@/models/User";
+import { redirect } from "next/navigation";
 
-export async function createUser(state: { message: string; success: boolean; }, formData: FormData) {
+export async function createUser(prevState: any, formData: FormData) {
     try {
       const session = await getServerSession(authOptions);
       const newClient = {
@@ -54,5 +55,28 @@ export async function createUser(state: { message: string; success: boolean; }, 
       return { message: "Workout program created successfully", success: true };
     } catch (error) {
       return { message: `Failed with error: ${error}`, success: false };
+    }
+  }
+
+  export async function checkSession() {
+    const session = await getServerSession(authOptions);
+    if (session === null || session === undefined) redirect("/api/auth/signin");
+    return { role: session?.user?.role, name: session?.user?.name };
+  }
+
+  export async function getAllClients() {
+    const session = await getServerSession(authOptions);
+    const url = "https://afefitness2023.azurewebsites.net/api/Users/Clients";
+    try {
+      const response = await fetch(url, {
+        next: { tags: ["clients"] },
+        method: "GET",
+        headers: { Authorization: `Bearer ${session?.user?.token}` },
+      });
+  
+      const data: User[] = await response.json();
+      return { data };
+    } catch (error) {
+      return { error: error };
     }
   }

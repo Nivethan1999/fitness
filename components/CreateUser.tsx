@@ -1,16 +1,15 @@
 "use client";
 
-// import { createUser } from "@/server/actions";
 import { createUser } from "@/services/TrainerService";
-import { useFormState } from "react-form-state";
+import { useFormState } from "react-dom";
 
 import FormInput from "@/components/FormInput";
 import FormSubmit from "@/components/FormSubmit";
 
 export default function CreateClientForm() {
   let initialState = {
-    message: null,
-    success: null,
+    message:"" as string,
+    success: false as boolean,
   };
   const [state, formAction] = useFormState(createUser, initialState);
 
