@@ -1,33 +1,35 @@
 // components/Navbar.js
 import Link from 'next/link';
+import styles from './navbar.module.css';
+import utilStyles from '../styles/utils.module.css';
 
 const Navigationbar = () => {
   return (
-    <nav>
-      <ul>
+    <nav className={styles.nav}>
+      <ul className={styles.navbar}>
         <li>
           <Link href="/">
-            <a>Home</a>
+            <h1>Home</h1>
           </Link>
         </li> 
         <li>
-          <Link href="personaltrainer/addexercise">
-            <a>Opret en exercise</a>
+          <Link href="/personaltrainer/addexercise">
+            <h1>Opret en exercise</h1>
           </Link>
         </li>
         <li>
           <Link href="/personaltrainer/client">
-            <a>Opret en bruger</a>
+            <h1>Opret en bruger</h1>
           </Link>
         </li>
         <li>
           <Link href="/personaltrainer/createprogram">
-            <a>Opret ny program for bruger</a>
+            <h1>Opret ny program for bruger</h1>
           </Link>
         </li>
         <li>
           <Link href="/personaltrainer/programlist">
-            <a>Se listen af workout programmer</a>
+            <h1>Se listen af workout programmer</h1>
           </Link>
         </li>
         {/* Add more links as needed */}

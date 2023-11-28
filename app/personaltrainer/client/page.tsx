@@ -1,11 +1,13 @@
 import CreateClientForm from "@/components/CreateUser";
 import ClientList from "@/components/UserList";
 import { getAllClients } from "@/services/TrainerService";
+import Layout from "@/components/Layout";
 
 export default async function ClientsPage() {
   const clients = await getAllClients();
   // const session = await checkSession();
   return (
+    <Layout>
     <main className="flex flex-col items-center justify-center min-h-screen p-4">
     <div className="w-full max-w-md mx-auto bg-gray-100 p-8 shadow-lg rounded-lg mb-12">
       <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
@@ -20,5 +22,6 @@ export default async function ClientsPage() {
       <ClientList clients={clients?.data} />
     </div>
   </main>
+  </Layout>
 );
 }
