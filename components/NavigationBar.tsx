@@ -14,7 +14,13 @@ const Navigationbar = () => {
         </li>  */}
         <li>
           <Link href="/api/auth/signin/">
-            <h1>login</h1>
+            <h1>Login</h1>
+          </Link>
+        </li>
+
+        <li>
+          <Link href="/client">
+            <h1>Se program</h1>
           </Link>
         </li>
         

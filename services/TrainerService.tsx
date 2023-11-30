@@ -12,7 +12,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 
 export async function createUser(prevState: any, formData: FormData) {
     try {
-      const session = await getServerSession();
+      const session = await getServerSession(authOptions);
       const newClient = {
         userId: 0,
         firstName: formData.get("firstName"),
@@ -38,7 +38,7 @@ export async function createUser(prevState: any, formData: FormData) {
 
   export async function createWorkoutProgram(prevState: any, formData: FormData) {
     try {
-      const session = await getServerSession();
+      const session = await getServerSession(authOptions);
       const newWorkoutProgram = {
         workoutProgramId: 0,
         name: formData.get("name"),
@@ -69,7 +69,7 @@ export async function createUser(prevState: any, formData: FormData) {
   // }
 
   export async function getAllClients() {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     const url = "https://afefitness2023.azurewebsites.net/api/Users/Clients";
     try {
       const response = await fetch(url, {
@@ -87,7 +87,7 @@ export async function createUser(prevState: any, formData: FormData) {
 
   export async function getAllExercises() {
     try {
-      const session = await getServerSession();
+      const session = await getServerSession(authOptions);
       const url = "https://afefitness2023.azurewebsites.net/api/Exercises/";
       const response = await fetch(url, {
         next: { tags: ["exercises"] },
@@ -105,7 +105,7 @@ export async function createUser(prevState: any, formData: FormData) {
 
   export async function getTrainerWorkoutPrograms() {
     try {
-      const session = await getServerSession();
+      const session = await getServerSession(authOptions);
       const url =
         "https://afefitness2023.azurewebsites.net/api/WorkoutPrograms/trainer/";
       const response = await fetch(url, {
@@ -124,7 +124,7 @@ export async function createUser(prevState: any, formData: FormData) {
 
   export async function addExercise(prevState: any, formData: FormData) {
     try {
-      const session = await getServerSession();
+      const session = await getServerSession(authOptions);
       const exerciseToAdd = {
         name: formData.get("name"),
         description: formData.get("description"),
@@ -160,4 +160,3 @@ export async function createUser(prevState: any, formData: FormData) {
   }
 
  
-  
