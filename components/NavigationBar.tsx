@@ -7,11 +7,17 @@ const Navigationbar = () => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.navbar}>
-        <li>
+        {/* <li>
           <Link href="/">
             <h1>Home</h1>
           </Link>
-        </li> 
+        </li>  */}
+        <li>
+          <Link href="/api/auth/signin/">
+            <h1>login</h1>
+          </Link>
+        </li>
+        
         <li>
           <Link href="/personaltrainer/addexercise">
             <h1>Opret en exercise</h1>

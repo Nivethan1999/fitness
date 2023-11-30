@@ -2,10 +2,11 @@ import CreateClientForm from "@/components/CreateUser";
 import ClientList from "@/components/UserList";
 import { getAllClients } from "@/services/TrainerService";
 import Layout from "@/components/Layout";
+import { checkSession } from "@/services/TrainerService";
 
 export default async function ClientsPage() {
   const clients = await getAllClients();
-  // const session = await checkSession();
+  const session = await checkSession();
   return (
     <Layout>
     <main className="flex flex-col items-center justify-center min-h-screen p-4">

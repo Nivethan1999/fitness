@@ -4,17 +4,17 @@ import AddExercise from "@/components/AddExercise";
 import React from 'react'
 import Layout from "@/components/Layout";
 import {
-//   checkSession,
+  checkSession,
   getAllClients,
   getAllExercises,
   getTrainerWorkoutPrograms,
 } from "@/services/TrainerService";
 
 export default async function WorkoutProgramsPage() {
-//   const session = await checkSession();
+  const session = await checkSession();
   const workoutPrograms = await getTrainerWorkoutPrograms();
   const exercises = await getAllExercises();
-//   const clients = await getAllClients();
+  const clients = await getAllClients();
 
   return (
     <Layout>

@@ -1,12 +1,14 @@
 "use server";
 import { revalidateTag } from "next/cache";
 import axios from "axios";
+// import { getServerSession } from "next-auth";
 import { getServerSession } from "next-auth";
 // import { authOptions } from "./Auth";
 import User from "@/models/User";
 import { redirect } from "next/navigation";
 import Exercise from "@/models/Exercise";
 import WorkoutProgram from "@/models/WorkoutProgram";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 
 export async function createUser(prevState: any, formData: FormData) {
     try {
@@ -148,3 +150,14 @@ export async function createUser(prevState: any, formData: FormData) {
       return { message: `Failed with error: ${error}`, success: false };
     }
   }
+
+  export async function checkSession() {
+    const session = await getServerSession(authOptions);
+    console.log(session?.user?.role)
+
+    if (session === null || session === undefined) redirect("/api/auth/signin");
+    return { role: session?.user?.role, name: session?.user?.name };
+  }
+
+ 
+  
