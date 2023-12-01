@@ -17,6 +17,7 @@ const Navigationbar = async () => {
         </li>  */}
         <li>
           <Link href="/api/auth/signin/">
+         
             <h1>Log Ud</h1>
           </Link>
         </li>
@@ -24,6 +25,7 @@ const Navigationbar = async () => {
         <li>
           {(await session)?.role?.toLowerCase() === "client" ? (
             <Link href="/client">
+            
               <h1>Se program</h1>
             </Link>
           ) : null}
@@ -32,6 +34,7 @@ const Navigationbar = async () => {
         <li>
           {(await session)?.role?.toLowerCase() === "manager" ? (
             <Link href="/manager">
+             
               <h1>Creater Trainer</h1>
             </Link>
           ) : null}

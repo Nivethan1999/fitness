@@ -17,7 +17,7 @@ export default function CreatePersonalTrainerForm() {
       <FormInput label="Last Name" name="lastName" type="text" required />
       <FormInput label="Email" name="email" type="email" required />
       <FormInput label="Password" name="password" type="password" required />
-      <FormInput label="accountType" name="accountType" type="text" required />
+      {/* <FormInput label="accountType" name="accountType" type="text" required /> */}
       <FormSubmit state={state} />
     </form>
   );

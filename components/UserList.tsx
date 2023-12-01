@@ -8,7 +8,7 @@ export default function ClientList({
   return (
     <div className="bg-white p-4 rounded-md shadow-md ">
       {clients?.length === 0 ? (
-        <p>No clients available.</p>
+        <h3>No clients available.</h3>
       ) : (
         <ul>
           {clients?.map((client) => (
