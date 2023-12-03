@@ -23,7 +23,7 @@ export default function AddExercise({
     
   
       <main className="flex flex-col items-center min-h-screen p-4">
-        <form className="w-full max-w-md p-8 bg-white rounded shadow">
+        <form className="w-full max-w-md p-8 bg-white rounded shadow" action={formAction}>
           <div className="mb-4">
             <label
               htmlFor="workoutProgram"
