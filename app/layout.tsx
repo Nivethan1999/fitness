@@ -58,6 +58,7 @@ export default async function RootLayout({
             <Link
               className="mx-2 p-4 text-black font-semibold hover:text-white"
               href={"/"}
+              style={{marginRight: '10px'}}
             >
               Home
             </Link>

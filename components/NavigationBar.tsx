@@ -41,22 +41,22 @@ const Navigationbar = async () => {
         </li>
 
         {(await session).role?.toLowerCase() === "personaltrainer" ? (
-          <li>
+          <li style={{ display: 'flex'}}>
             <>
-              <Link href="/personaltrainer/addexercise">
+              <Link style={{marginRight: '10px'}} href="/personaltrainer/addexercise">
                 <h1>Opret en exercise</h1>
               </Link>
             </>
 
-            <Link href="/personaltrainer/client">
+            <Link style={{marginRight: '10px'}} href="/personaltrainer/client">
               <h1>Opret en bruger</h1>
             </Link>
 
-            <Link href="/personaltrainer/createprogram">
+            <Link style={{marginRight: '10px'}} href="/personaltrainer/createprogram">
               <h1>Opret ny program for bruger</h1>
             </Link>
 
-            <Link href="/personaltrainer/programlist">
+            <Link style={{marginRight: '10px'}} href="/personaltrainer/programlist">
               <h1>Se listen af workout programmer</h1>
             </Link>
           </li>
