@@ -20,9 +20,9 @@ export default function AddExercise({
   const [state, formAction] = useFormState(addExercise, initialState);
 
   return (
-    <div className="flex flex-col items-center min-h-screen p-4">
+    
   
-      <main className="flex items-center flex-1">
+      <main className="flex flex-col items-center min-h-screen p-4">
         <form className="w-full max-w-md p-8 bg-white rounded shadow">
           <div className="mb-4">
             <label
@@ -75,6 +75,6 @@ export default function AddExercise({
           <FormSubmit state={state} />
         </form>
       </main>
-    </div>
+ 
   );
 }
