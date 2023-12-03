@@ -20,11 +20,9 @@ export default function AddExercise({
   const [state, formAction] = useFormState(addExercise, initialState);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      <header className="bg-gray-200 py-4 w-full">
-        {/* Your Navigation Bar Content Goes Here */}
-      </header>
-      <main className="flex items-center justify-center flex-1">
+    <div className="flex flex-col items-center min-h-screen p-4">
+  
+      <main className="flex items-center flex-1">
         <form className="w-full max-w-md p-8 bg-white rounded shadow">
           <div className="mb-4">
             <label

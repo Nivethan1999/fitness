@@ -25,7 +25,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="bg-gray-200 flex justify-center flex flex-col items-center py-4">
+        <header className="bg-gray-200 flex  flex flex-col items-center py-4">
           <Link
             className="mx-2 p-4 font-semibold hover:text-gray-600"
             href={"/"}

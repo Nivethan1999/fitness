@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { login, LoginRequestBody } from '@/services/Login';
-
+import Layout from "@/components/Layout";
 
 const LoginPage = () => {
   const [email, setemail] = useState('');
@@ -24,7 +24,7 @@ const LoginPage = () => {
   };
 
   return (
-
+    <Layout>
     <div>
       <h1>Login Page</h1>
       <label>
@@ -39,7 +39,7 @@ const LoginPage = () => {
       <br />
       <button onClick={handleLogin}>Login</button>
     </div>
-
+    </Layout>
   );
 };
 
