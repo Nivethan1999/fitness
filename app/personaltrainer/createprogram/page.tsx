@@ -1,4 +1,3 @@
-import WorkoutProgramList from "@/components/WorkoutProgramList";
 import CreateWorkoutProgram from "@/components/CreateProgram";
 import AddExercise from "@/components/AddExercise";
 import {
