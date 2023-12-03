@@ -24,7 +24,7 @@ const Navigationbar = async () => {
 
         <li>
           {(await session)?.role?.toLowerCase() === "client" ? (
-            <Link href="/client">
+            <Link style={{marginLeft: '10px'}} href="/client">
             
               <h1>Se program</h1>
             </Link>
