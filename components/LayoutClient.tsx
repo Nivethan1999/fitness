@@ -1,23 +1,23 @@
-// components/Layout.tsx
-import React from 'react';
-import Navigationbar from './NavigationBar';
+// // components/Layout.tsx
+// import React from 'react';
+// import Navigationbar from './NavigationBar';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
+// interface LayoutProps {
+//   children: React.ReactNode;
+// }
 
-const LayoutClient: React.FC<LayoutProps> = ({ children }) => {
-  return (
-    <html lang="en">
-      <head>
-        {/* Include your head elements here */}
-      </head>
-      <body>
-        <Navigationbar />
-        {children}
-      </body>
-    </html>
-  );
-};
+// const LayoutClient: React.FC<LayoutProps> = ({ children }) => {
+//   return (
+//     <html lang="en">
+//       <head>
+//         {/* Include your head elements here */}
+//       </head>
+//       <body>
+//         <Navigationbar />
+//         {children}
+//       </body>
+//     </html>
+//   );
+// };
 
-export default LayoutClient;
+// export default LayoutClient;
