@@ -23,15 +23,15 @@ export const authOptions: NextAuthOptions = {
               password: credentials?.password,
             }),
             headers: { "Content-Type": "application/json" },
-          },
+          }
         );
         const data = await loginResponse.json();
 
         if (loginResponse.ok && data?.jwt) {
           let token: { Name: string; Role: string; UserId: string } = jwtDecode(
-            data?.jwt,
+            data?.jwt
           );
-                console.log("login:" + token.Role + token.Name + token.UserId)
+          console.log("login:" + token.Role + token.Name + token.UserId);
           return {
             id: token.UserId,
             name: token.Name,
