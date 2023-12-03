@@ -1,15 +1,12 @@
-import WorkoutProgramList from "@/components/WorkoutProgramList";
 import CreateWorkoutProgram from "@/components/CreateProgram";
 import AddExercise from "@/components/AddExercise";
 import {
-  checkSession,
   getAllClients,
   getAllExercises,
   getTrainerWorkoutPrograms,
 } from "@/services/TrainerService";
 
 export default async function WorkoutProgramsPage() {
-  const session = await checkSession();
   const workoutPrograms = await getTrainerWorkoutPrograms();
   const exercises = await getAllExercises();
   const clients = await getAllClients();
