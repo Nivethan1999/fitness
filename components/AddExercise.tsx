@@ -20,49 +20,63 @@ export default function AddExercise({
   const [state, formAction] = useFormState(addExercise, initialState);
 
   return (
-    <form className="max-w-md mx-auto mt-8" action={formAction}>
-      <div className="mb-4">
-        <label
-          htmlFor="workoutProgram"
-          className="block text-gray-700 text-sm font-bold mb-2"
-        >
-          Select Workout Program
-        </label>
-        <select
-          id="workoutProgram"
-          name="workoutProgram"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        >
-          <option value="" disabled>
-            Choose a workout program
-          </option>
-          {workoutPrograms?.map((program) => (
-            <option
-              key={program.workoutProgramId}
-              value={program.workoutProgramId}
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+      <header className="bg-gray-200 py-4 w-full">
+        {/* Your Navigation Bar Content Goes Here */}
+      </header>
+      <main className="flex items-center justify-center flex-1">
+        <form className="w-full max-w-md p-8 bg-white rounded shadow">
+          <div className="mb-4">
+            <label
+              htmlFor="workoutProgram"
+              className="block text-gray-700 text-sm font-bold mb-2"
             >
-              {program.name}
-            </option>
-          ))}
-        </select>
-      </div>
-      <label
-        htmlFor="exerciseProgram"
-        className="block text-gray-700 text-sm font-bold mb-2"
-      >
-        Exercise
-      </label>
-      <FormInput label="Name" name="name" type="text" required />
-      <FormInput label="Description" name="description" type="text" required />
-      <FormInput label="Sets" name="sets" type="number" required />
-      <FormInput
-        label="Repetitions"
-        name="repetitions"
-        type="number"
-        required
-      />
-      <FormInput label="Time" name="time" type="text" required />
-      <FormSubmit state={state} />
-    </form>
+              Select Workout Program
+            </label>
+            <select
+              id="workoutProgram"
+              name="workoutProgram"
+              className="w-full px-3 py-2 border rounded shadow appearance-none text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
+              <option value="" disabled>
+                Choose a workout program
+              </option>
+              {workoutPrograms?.map((program) => (
+                <option
+                  key={program.workoutProgramId}
+                  value={program.workoutProgramId}
+                >
+                  {program.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="exerciseProgram"
+              className="block text-gray-700 text-sm font-bold mb-2"
+            >
+              Exercise
+            </label>
+            <FormInput label="Name" name="name" type="text" required />
+            <FormInput
+              label="Description"
+              name="description"
+              type="text"
+              required
+            />
+            <FormInput label="Sets" name="sets" type="number" required />
+            <FormInput
+              label="Repetitions"
+              name="repetitions"
+              type="number"
+              required
+            />
+            <FormInput label="Time" name="time" type="text" required />
+          </div>
+          <FormSubmit state={state} />
+        </form>
+      </main>
+    </div>
   );
 }

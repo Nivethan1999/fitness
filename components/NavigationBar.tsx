@@ -10,11 +10,6 @@ const Navigationbar = async () => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.navbar}>
-        {/* <li>
-          <Link href="/">
-            <h1>Home</h1>
-          </Link>
-        </li>  */}
         <li>
           <Link href="/api/auth/signin/">
          
@@ -61,8 +56,6 @@ const Navigationbar = async () => {
             </Link>
           </li>
         ) : null}
-
-        {/* Add more links as needed */}
       </ul>
     </nav>
   );
