@@ -11,7 +11,7 @@ const Navigationbar = async () => {
     <nav className={styles.nav}>
       <ul className={styles.navbar}>
         <li>
-          <Link href="/api/auth/signin/">
+          <Link style={{marginRight: '10px'}} href="/api/auth/signin/">
          
             <h1>Log Ud</h1>
           </Link>
@@ -19,7 +19,7 @@ const Navigationbar = async () => {
 
         <li>
           {(await session)?.role?.toLowerCase() === "client" ? (
-            <Link style={{marginLeft: '10px'}} href="/client">
+            <Link style={{marginRight: '5px'}} href="/client">
             
               <h1>Se program</h1>
             </Link>

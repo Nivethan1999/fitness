@@ -12,9 +12,9 @@ export default function WorkoutProgramList({
   return workoutPrograms?.map((workoutProgram) => (
     <div
       key={workoutProgram.workoutProgramId}
-      className="m-8 bg-green-100 cursor-pointer"
+      className="m-8 bg-red cursor-pointer"
     >
-      <div className="flex flex-col bg-green-100">
+      <div className="flex flex-col bg-red">
         <h3 className="mx-4 mt-4 p-2 text-2xl font-semibold">
           {workoutProgram.name}
         </h3>

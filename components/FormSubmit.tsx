@@ -11,7 +11,7 @@ const FormSubmit = ({ state }: SubmitProps) => {
       <button
         type="submit"
         aria-disabled={pending}
-        className="bg-blue-500 text-white p-2 rounded-md mx-auto w-full"
+        className="bg-gray text-white p-2 rounded-md mx-auto w-full"
       >
         {pending ? "Submitting..." : "Submit"}
       </button>

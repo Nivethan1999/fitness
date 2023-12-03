@@ -16,13 +16,13 @@ export default async function WorkoutProgramsPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="w-full p-4">
-        <div className="bg-blue-200 p-6 shadow-2xl border-4 border-blue-100-300 rounded-t-2xl mb-12">
+        <div className="bg-gray-200 p-6 shadow-2xl border-4 border-gray-100-300 rounded-t-2xl mb-12">
           <h2 className="text-4xl text-center text-gray-800 pb-8">
             Create new program
           </h2>
           <CreateWorkoutProgram clients={clients.data} />
         </div>
-        <div className="bg-blue-200 p-6 shadow-2xl border-4 border-blue-100-300 rounded-t-2xl mb-12">
+        <div className="bg-gray-200 p-6 shadow-2xl border-4 border-gray-100-300 rounded-t-2xl mb-12">
           <h2 className="text-4xl text-center text-gray-800 pb-8">
             Add exercise to existing workout program
           </h2>
