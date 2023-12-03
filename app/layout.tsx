@@ -35,18 +35,6 @@ export default async function RootLayout({
           <Navigationbar/>
           {children}
         </header>
-
-        <main className="flex min-h-screen flex-col items-center">
-          {/* <Provider session={session}>{children}</Provider> */}
-        </main>
-        <nav className="flex justify-between bg-gray-200 py-4">
-          <Link
-            className="mx-2 p-4 font-semibold hover:text-gray-600"
-            href={"/api/auth/signout"}
-          >
-            Logout
-          </Link>
-        </nav>
       </body>
     </html>
   );
